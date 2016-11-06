@@ -1,0 +1,144 @@
+﻿<Page
+    x:Class="RestCoach.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RestCoach"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Background="#FFE74C3C" SizeChanged="Page_SizeChanged">
+        <StackPanel Name="pageStack" HorizontalAlignment="Center" Background="#FFE74C3C">
+
+       
+        
+        
+        
+        
+        <AppBar Background="#FFC0392B"  Foreground="WhiteSmoke" VerticalAlignment="Stretch" >
+            <StackPanel Orientation="Horizontal">
+                <Image Margin="10" Width="30" VerticalAlignment="Top" HorizontalAlignment="Left" Source="Assets/logo/CircleInfo.png" Tapped="Info" />
+
+                <ScrollViewer x:Name="scroller" ScrollViewer.VerticalScrollMode="Auto" ScrollViewer.VerticalScrollBarVisibility="Hidden"  VerticalContentAlignment="Stretch" ScrollViewer.BringIntoViewOnFocusChange="True" ZoomMode="Enabled" Margin="2,0,0,0" HorizontalAlignment="Right" >
+
+
+                    <ListView x:Name="mylist" ItemsSource="{Binding}" ScrollViewer.VerticalScrollMode="Auto" ScrollViewer.VerticalScrollBarVisibility="Auto" HorizontalAlignment="Center" >
+
+                        <ListView.ItemTemplate>
+
+                            <DataTemplate >
+
+                                <StackPanel Orientation="Vertical">
+                                    <!--<ListViewHeaderItem Width="350" Background="{x:Null}" Content="Notifications"/> -->
+                                    <StackPanel Orientation="Horizontal">
+                                        <Rectangle Margin="12,12" Fill="#F0FFFFFF" Height="10" Width="25" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+
+                                        <TextBlock FontSize="18" Foreground="WhiteSmoke" Text="{Binding Title}" VerticalAlignment="Center" HorizontalAlignment="Stretch" Margin="0,0,15,0" />
+                                        <TextBlock FontSize="12" Foreground="White" Text="(" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        <TextBlock FontSize="12"  Foreground="White" Text="{Binding Path=Timestamp}" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                        <TextBlock FontSize="12"  Foreground="White" Text=")" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                    </StackPanel>
+                                    <TextBlock FontSize="14" Foreground="LightGray" Text="{Binding Description}"/>
+                                </StackPanel>
+
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+
+
+
+                    </ListView>
+                </ScrollViewer>
+
+
+
+            </StackPanel>
+            
+
+
+        </AppBar>
+        <ScrollViewer Name="contentScroller"   ScrollViewer.VerticalScrollBarVisibility="Hidden" >
+            <StackPanel x:Name="content">  
+            
+            
+            <StackPanel Name="TimerPanel" Margin="0,25,0,22">
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" DoubleTapped="StackPanel_DoubleTapped">
+                <Image Source="Assets/cutomPics/Settings-01.png" Margin="10,0" NineGrid="0,-1,0,0" Tapped="Image_Tapped"/>
+                <TextBlock x:Name="TimerLog" FontSize="80" Margin="0" TextAlignment="Center" Text="00:00:00" Foreground="White"/>
+
+            </StackPanel>
+
+            <StackPanel x:Name="TimesStack" Margin="10,2,5,10" Orientation="Horizontal" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <TextBlock x:Name="startLabel" TextWrapping="Wrap" Text="Session" FontSize="18.667" Margin="0,0,10,0" Foreground="#FFFFFDD7"/>
+                <TextBlock x:Name="startTimeText" TextWrapping="Wrap" Text="" FontSize="18.667" Margin="0,0,5,0" Foreground="#FFFFFDD7"/>
+                <TextBlock x:Name="endLabel" TextWrapping="Wrap" Text="-" FontSize="18.667" TextAlignment="Center" Foreground="#FFFFFDD7"/>
+                <TextBlock x:Name="endTimeText" TextWrapping="Wrap" Text="" FontSize="18.667" TextAlignment="Right" Margin="10,0,0,0" Foreground="#FFFFFDD7"/>
+            </StackPanel>
+        </StackPanel>
+        <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Text="Work Environment" FontStretch="UltraExpanded" Foreground="White" HorizontalAlignment="Center" VerticalAlignment="Center" TextAlignment="Center" CharacterSpacing="130" FontSize="24" FontFamily="Papyrus"/>
+        <StackPanel Name="optionTiles" Margin="0,-1,0,0" Orientation="Horizontal" Height="77" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="555,0">
+            <ToggleButton x:Name="stressedToggleButton"  Content="Stress" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,0,10" FontSize="13.333" BorderThickness="0" Foreground="Transparent" FontWeight="Bold">
+                <ToggleButton.Background>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="Assets/cutomPics/stressed.png"/>
+                </ToggleButton.Background>
+            </ToggleButton>
+            <ToggleButton x:Name="tiredToggleButton" Content="Tired" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,0,10" FontSize="13.333" FontWeight="Bold" BorderThickness="0" Foreground="Transparent" >
+                <ToggleButton.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="Assets/cutomPics/tired.png"/>
+                </ToggleButton.Background>
+            </ToggleButton>
+            <ToggleButton x:Name="comfortableToggleButton" Content="comfy" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,0,10" FontSize="13.333" FontWeight="Bold" BorderThickness="0" Foreground="Transparent">
+                <ToggleButton.Background>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="Assets/cutomPics/Sofa.png"/>
+                </ToggleButton.Background>
+            </ToggleButton>
+            <ToggleButton x:Name="noiseToggleButton" Content="Noise" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,10,0,10" FontSize="13.333" FontWeight="Bold" BorderThickness="0" Foreground="Transparent">
+                <ToggleButton.Background>
+                    <ImageBrush Stretch="UniformToFill" ImageSource="Assets/cutomPics/Horn-02-WF.png"/>
+                </ToggleButton.Background>
+            </ToggleButton>
+            <ToggleButton x:Name="onDeskToggleButton" Content="onDesk" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10" FontSize="13.333" FontWeight="Bold" BorderThickness="0" Foreground="Transparent">
+                <ToggleButton.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="Assets/cutomPics/Student-Laptop.png"/>
+                </ToggleButton.Background>
+            </ToggleButton>
+
+        </StackPanel>
+        <StackPanel Background="White" Height="2" HorizontalAlignment="Center"/>
+
+     
+
+        <StackPanel x:Name="buttonStack" BorderBrush="WhiteSmoke" Margin="5,20,5,0" Orientation="Horizontal" Tapped="StartStopWork" VerticalAlignment="Center" Padding="5,0" BorderThickness="10" CornerRadius="20" HorizontalAlignment="Center">
+            <Image x:Name="imageState" Source="Assets/cutomPics/resting.png" Margin="0" VerticalAlignment="Center" HorizontalAlignment="Center" Height="80" />
+            <TextBlock x:Name="isWorkingTextBloc" FontSize="32" TextAlignment="Center" LineHeight="8" Foreground="White" Text="Start Working" Margin="10,0,0,0" VerticalAlignment="Center" HorizontalAlignment="Right" />
+        </StackPanel>
+        <StackPanel x:Name="frames" Margin="0,14,0,0" Orientation="Horizontal" Padding="5555,0" Height="80" HorizontalAlignment="Center" VerticalAlignment="Center" >
+            <Button x:Name="btnHistory" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="0" Tapped="go2History" BorderBrush="Blue" BorderThickness="0" Width="100">
+                <Button.Background>
+                    <ImageBrush ImageSource="Assets/cutomPics/History-WF.png" Stretch="None"/>
+                </Button.Background>
+                <TextBlock x:Name="textBlock" Margin="-22.667,55,-17.667,-5" TextWrapping="Wrap" Text="Notification History" FontSize="13.333" Foreground="White"/>
+            </Button>
+            <Button x:Name="btnStats" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="10,0,0,0" BorderBrush="Blue" Tapped="GoStats" BorderThickness="0" RenderTransformOrigin="0.5,0.5" Width="100" Foreground="{x:Null}">
+                <Button.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="Assets/cutomPics/stats.png"/>
+                </Button.Background>
+                <TextBlock x:Name="txt2" Margin="0,56,0,0.6" TextWrapping="Wrap" Text="Statistics" FontSize="13.333" Foreground="White"/>
+            </Button>
+        </StackPanel>
+
+     
+        <!--           <Popup Name="pop" Width="300" Height="300" IsOpen="False" Margin="0,-300,0,0">
+            <StackPanel Orientation="Horizontal">
+                <Image Name="tutorial"></Image>
+                <Button Name="next" Content="Next" VerticalAlignment="Stretch" HorizontalAlignment="Right" Tapped="next_Tapped"></Button>
+             </StackPanel>
+        </Popup>
+
+            -->
+
+
+    </StackPanel>
+        </ScrollViewer>
+
+
+    </StackPanel>
+
+</Page>

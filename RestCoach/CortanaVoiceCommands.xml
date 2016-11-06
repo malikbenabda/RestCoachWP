@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<VoiceCommands xmlns="http://schemas.microsoft.com/voicecommands/1.1">
+  <CommandSet xml:lang="en-us" Name="ExampleAppCommandSet_en-us">
+    <CommandPrefix> RestCoach , </CommandPrefix>
+    <Example> open settings </Example>
+
+    <Command Name="settings">
+      <Example> open settings  </Example>
+      <ListenFor> [open] [the] [time] settings </ListenFor>
+      <ListenFor> [open] paramaters </ListenFor>
+      <Feedback> Opening Time Settings </Feedback>
+      <Navigate />
+    </Command>
+
+  </CommandSet>
+  
+
+  <!-- Other CommandSets for other languages -->
+
+</VoiceCommands>

@@ -1,0 +1,91 @@
+﻿<Page
+    x:Class="RestCoach.NotificationHistory"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RestCoach"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" SizeChanged="Page_SizeChanged">
+
+    <StackPanel Background="#FFE74C3C">
+        <StackPanel Background="#FFE74C3C" HorizontalAlignment="Center">
+            <StackPanel x:Name="title" Orientation="Horizontal" BorderThickness="0,0,0,10" Padding="888,0" Background="#FFC0392B" VerticalAlignment="Center" HorizontalAlignment="Center" >
+
+
+                <Image x:Name="btnback" Source="Assets/cutomPics/back.png" Tapped="goBack"/>
+
+
+                <TextBlock x:Name="HistoryText" FontSize="45" TextAlignment="Center" LineHeight="8" Foreground="White" Margin="50,10,20,10" HorizontalAlignment="Left" Text="History" />
+
+
+            </StackPanel>
+            <ScrollViewer Name="scroller" Height="515" Margin="0,10,0,0" Background="{x:Null}" ScrollViewer.VerticalScrollBarVisibility="Hidden" HorizontalAlignment="Center" ScrollViewer.HorizontalScrollMode="Enabled"  ScrollViewer.HorizontalScrollBarVisibility="Hidden" ZoomMode="Enabled" MaxZoomFactor="1.2" MinZoomFactor="0.8" DoubleTapped="ScrollViewer_DoubleTapped"   >
+                <ListView x:Name="historyList"  FontWeight="Bold">
+
+                    <ListView.ItemTemplate >
+
+                        <DataTemplate >
+                            <StackPanel  Orientation="Horizontal">
+
+                                <StackPanel Name="optionButtons" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="20,0,0,0">
+                                    <Button x:Name="btnedit" Tapped="editing" HorizontalAlignment="Center" VerticalAlignment="Center" Width="30" Height="30" Margin="0,10,0,0">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="Assets\cutomPics\Data-Edit.png" Stretch="Uniform"/>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button x:Name="btnDeleteNotif" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center"  Tapped="deleteAction" Width="30" Margin="0,10">
+                                        <Button.Background>
+                                            <ImageBrush Stretch="Uniform" ImageSource="Assets\cutomPics\Trash.png"/>
+                                        </Button.Background>
+                                    </Button>
+                                    <Button x:Name="btnShare" Click="btnShare_Click" Width="30" Height="30" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,0,0,10">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="Assets\cutomPics\Share-06-WF.png" Stretch="Uniform"/>
+                                        </Button.Background>
+                                    </Button>
+                                </StackPanel>
+
+                                <StackPanel Orientation="Vertical" Name="cellContent" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Margin="20,0,0,0">
+
+                                    <StackPanel Name="titlestack" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
+                                        <Rectangle Margin="12,12" Fill="DarkCyan" Height="15" Width="15"/>
+                                        <TextBlock Foreground="WhiteSmoke" FontSize="25" Text="{Binding Title}" SelectionHighlightColor="Gray" Margin="0,0,25,0" FontWeight="Normal"/>
+
+                                    </StackPanel>
+                                    <TextBlock FontSize="14" Text="{Binding EndWorkTime}"   Foreground="WhiteSmoke" Margin="25,0,0,0"/>
+
+                                    <StackPanel  Name="workdone" Orientation="Horizontal"  Margin="25,0,0,0">
+                                        <TextBlock Foreground="WhiteSmoke" FontSize="15" Text="Worktime done : %" />
+                                        <TextBlock Foreground="WhiteSmoke"  FontSize="15" Text="{Binding percentageOfWork}"/>
+                                    </StackPanel>
+                                    <StackPanel  Name="stateimages" Orientation="Horizontal" HorizontalAlignment="Stretch" Margin="25,0,0,0">
+                                        <Image Name="stressImg" Width="Auto" Height="Auto" Source="{Binding stressImage}" ></Image>
+                                        <Image Name="tiredImg"  Width="Auto" Height="Auto" Source="{Binding tiredImage}" Margin="5,0" ></Image>
+                                        <Image Name="comforImg" Width="Auto" Height="Auto"  Source="{Binding comforImage}" ></Image>
+                                        <Image Name="noiseImg" Width="Auto" Height="Auto" Source="{Binding noiseImage}" Margin="5,0" ></Image>
+                                        <Image Name="onDeskImg"  Width="Auto" Height="Auto" Source="{Binding deskImage}"  ></Image>
+                                    </StackPanel>
+
+
+
+                                </StackPanel>
+
+
+
+                            </StackPanel>
+                        </DataTemplate>
+
+                    </ListView.ItemTemplate>
+
+
+
+
+                </ListView>
+            </ScrollViewer>
+
+
+
+        </StackPanel>
+    </StackPanel>
+   
+</Page>

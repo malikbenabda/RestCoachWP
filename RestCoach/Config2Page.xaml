@@ -1,0 +1,52 @@
+﻿<Page
+    x:Class="RestCoach.Config2Page"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RestCoach"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" Background="#FFE74C3C" SizeChanged="Page_SizeChanged">
+
+    <StackPanel Background="#FFE74C3C">
+        <StackPanel Name="title" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Padding="555,0" Background="#FFC0392B" >
+            <Image x:Name="btnCancel" Source="Assets/cutomPics/back.png" Tapped="btnCancel_Tapped"/>
+            <TextBlock Name="header" FontSize="45" TextAlignment="Center" LineHeight="8" Foreground="White" Margin="20,10" HorizontalAlignment="Center" >
+            	<Run Text="Settings"/>
+            </TextBlock>
+            <Button x:Name="btnConfirm" HorizontalAlignment="Right" VerticalAlignment="Stretch" Margin="10,2" Click="btnConfig_Click" Width="60" Height="78">
+                <Button.Background>
+                    <ImageBrush Stretch="Uniform" ImageSource="Assets/cutomPics/Save.png"/>
+                </Button.Background>
+            </Button>
+
+
+        </StackPanel>
+
+        <ScrollViewer Name="scroller"     ScrollViewer.VerticalScrollBarVisibility="Hidden"  ScrollViewer.HorizontalScrollBarVisibility="Hidden" >
+        <StackPanel Name="TimeSetting" Orientation="Vertical">
+            <StackPanel Orientation="Horizontal" Name="WorktimeSettings" Margin="0,50" HorizontalAlignment="Center">
+
+
+                <Image Margin="5,20" Stretch="UniformToFill" Source="Assets/cutomPics/working.png" Width="100"/>
+                <TimePicker Name="WorkTimePicker" ClockIdentifier="24HourClock" Margin="0,34,0,16" Width="105" HorizontalAlignment="Center" VerticalAlignment="Center" RequestedTheme="Light" Foreground="White"  FontSize="29.333" FontWeight="Bold"/>
+
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" x:Name="SnoozetimeSettings" HorizontalAlignment="Center">
+
+
+                <Image Margin="5,20" Source="Assets/cutomPics/reminderX.png" Width="100"/>
+                <TimePicker x:Name="SnoozeTimePicker" ClockIdentifier="24HourClock" Margin="0,34,0,16" Width="105" HorizontalAlignment="Center" VerticalAlignment="Center" RequestedTheme="Light" Foreground="White" FontSize="29.333" FontWeight="Bold"/>
+
+            </StackPanel>
+        </StackPanel>
+        </ScrollViewer>
+
+
+
+
+
+    </StackPanel>
+
+
+
+</Page>

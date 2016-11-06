@@ -1,0 +1,34 @@
+﻿<Page
+    x:Class="RestCoach.Details"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RestCoach"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d" SizeChanged="Page_SizeChanged">
+
+    <StackPanel Orientation="Vertical" Background="#FFE74C3C">
+
+
+        <StackPanel x:Name="header" Orientation="Horizontal" BorderThickness="0,0,0,10" Margin="0" Padding="0" Background="#FFC0392B" >
+
+            <Image x:Name="btnback" Source="Assets/cutomPics/back.png" Tapped="goBack" Margin="25,0,0,0"/>
+
+            <TextBlock x:Name="HistoryText" FontSize="45" TextAlignment="Center" LineHeight="8" Foreground="White" Margin="30,10" Text="Details" />
+            <Image x:Name="image" Source="Assets/cutomPics/Save.png" Margin="20,0,0,0" Tapped="save"/>
+
+
+        </StackPanel>
+        <ScrollViewer Name="scroller" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" >        
+            <StackPanel Orientation="Vertical">
+            <TextBlock x:Name="textBlock" Text="Title :" Margin="20,10,10,10" TextWrapping="Wrap" FontSize="26.667" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" HorizontalAlignment="Left">
+
+            </TextBlock>
+            <TextBox x:Name="titleTextbox" Foreground="LightGray"  PlaceholderText="Work session title" TextWrapping="Wrap" Text="" Margin="20,0" FontSize="21.333" AcceptsReturn="True"/>
+            <TextBlock x:Name="textBlock_Copy" Text="Description :" Margin="20,20,20,10" TextWrapping="Wrap" FontSize="26.667" VerticalAlignment="Top" Foreground="White" FontWeight="Bold" HorizontalAlignment="Left"/>
+            <TextBox MinHeight="200" Name="descriptionTextBox" Foreground="WhiteSmoke" Margin="20,0,20,20" PlaceholderText="Description of work Session" AcceptsReturn="True" FontSize="16" />
+        </StackPanel>
+        </ScrollViewer>
+
+    </StackPanel>
+</Page>

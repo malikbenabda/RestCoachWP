@@ -1,0 +1,108 @@
+﻿<Page
+    x:Class="RestCoach.AboutPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:RestCoach"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    SizeChanged="Page_SizeChanged"
+    >
+
+    <StackPanel Background="#FFE74C3C">
+
+
+
+
+        <StackPanel x:Name="title" Orientation="Horizontal" BorderThickness="0,0,0,10" Padding="888,0" Background="#FFC0392B" VerticalAlignment="Center" HorizontalAlignment="Center" >
+
+            <Image x:Name="btnback" Source="Assets/cutomPics/back.png" Tapped="goHome" />
+
+
+            <TextBlock  FontSize="45" TextAlignment="Center" LineHeight="8" Foreground="White" Margin="50,10,20,10" HorizontalAlignment="Left" Text="About Us
+                        " />
+
+
+        </StackPanel>
+        <ScrollViewer x:Name="contentScroller" Height="500" ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ZoomMode="Disabled" MaxZoomFactor="2" MinZoomFactor="0.8"   >
+            <StackPanel>
+                <TextBlock x:Name="textBlock" Text="Application Description :" TextWrapping="Wrap" FontSize="25" Foreground="White" FontWeight="Bold" VerticalAlignment="Top" Margin="25,0,0,0"/>
+
+                <ScrollViewer x:Name="descriptionScroller" DoubleTapped="descriptionScroller_DoubleTapped" ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ZoomMode="Enabled" MaxZoomFactor="4" MinZoomFactor="0.5"  IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False">
+                    <TextBlock  MinHeight="200" Name="descriptionTextBox"  Foreground="WhiteSmoke" Margin="50,25,20,20"  FontSize="18.667" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" IsDoubleTapEnabled="False" SelectionHighlightColor="#00CC4A29" RequestedTheme="Light"  />
+                </ScrollViewer>
+
+                <TextBlock x:Name="textBlock_Copy" Text="About the Developpers :" TextWrapping="Wrap" FontSize="25" Foreground="White" FontWeight="Bold" VerticalAlignment="Top" Margin="25,0,0,0"/>
+                <ScrollViewer x:Name="developpersScroll" ScrollViewer.HorizontalScrollMode="Enabled" ScrollViewer.VerticalScrollBarVisibility="Hidden" ScrollViewer.HorizontalScrollBarVisibility="Hidden" ZoomMode="Enabled" MaxZoomFactor="2" MinZoomFactor="0.8" DoubleTapped="developpersScroll_DoubleTapped"   >
+                    <StackPanel x:Name="aboutstack" Orientation="Horizontal">
+
+                        <StackPanel Name="MalikStack"  Orientation="Horizontal" Margin="10,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <StackPanel Orientation="Vertical" Padding="5">
+                                <TextBlock Foreground="White" Text="Malik Benabda" FontSize="21.333" FontWeight="Bold" VerticalAlignment="Center" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" Margin="5,0,0,0"/>
+                                <TextBlock  MinHeight="100" x:Name="MalikDescription"  Padding="10" Foreground="WhiteSmoke" Margin="0"  FontSize="18.667" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" IsDoubleTapEnabled="False" SelectionHighlightColor="#00CC4A29" RequestedTheme="Light" TextAlignment="Center"  >
+                        			<Run Text="IT Engineering Student "/>
+                        			<LineBreak/>
+                        			<Run Text="Mobile Developer"/>
+                        			<LineBreak/>
+                        			<Run Text="FOSS Activist"/>
+                                </TextBlock>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                    <Image Source="Assets/cutomPics/baby_gnu.png" Margin="-150,-60,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <Image Source="Assets/cutomPics/baby_gnu.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-60,-150,0"/>
+
+                                </StackPanel>
+                                <StackPanel x:Name="contactIMG" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                                    <Image x:Name="fbIconM" Source="Assets/cutomPics/Facebook.png" Stretch="UniformToFill" Tapped="fbIcon_Tapped" Width="30" Height="30" Margin="10,0"/>
+                                    <Image x:Name="GMailIconM" Source="Assets/cutomPics/GMail.png" Margin="10,0" Tapped="GMailIconM_Tapped" Width="35"/>
+                                    <Image x:Name="LinkedInIconM" Source="Assets/cutomPics/LinkedIn.png" Margin="10,0" Tapped="LinkedInIconM_Tapped" Width="35"/>
+                                    <Image x:Name="TwitterIconM" Source="Assets/cutomPics/Twitter-Bird.png" Tapped="TwitterIconM_Tapped" Width="35" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </StackPanel>
+
+                            <Image Source="Assets/cutomPics/malik.jpg" Width="120" Height="170"/>
+
+                        </StackPanel>
+                        <StackPanel x:Name="HediStack"  Orientation="Horizontal" Margin="25,0,0,0" HorizontalAlignment="Left" VerticalAlignment="Center">
+                            <Image x:Name="kessImage" Source="Assets/cutomPics/kesssssssss.png" Width="120" Height="170"/>
+                            <StackPanel Orientation="Vertical" Padding="5">
+                                <TextBlock Foreground="White" Text="Hedi Kestouri" FontSize="21.333" FontWeight="Bold" VerticalAlignment="Center" IsDoubleTapEnabled="False" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" Margin="5,0,0,0"/>
+                                <TextBlock  MinHeight="100" x:Name="hediDescription"  Padding="10" Foreground="WhiteSmoke" Margin="0"  FontSize="18.667" IsHoldingEnabled="False" IsRightTapEnabled="False" IsTapEnabled="False" IsDoubleTapEnabled="False" SelectionHighlightColor="#00CC4A29" RequestedTheme="Light" TextAlignment="Center"  >
+                        			<Run Text="IT Engineering Student "/>
+                        			<LineBreak/>
+                        			<Run Text="Mobile Developer"/>
+                        			<LineBreak/>
+                        			<Run Text="FOSS Activist"/>
+                                </TextBlock>
+                                <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Top">
+                                    <Image Source="Assets/cutomPics/tux.png" Margin="-150,-60,0,0" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                                    <Image Source="Assets/cutomPics/tux.png" HorizontalAlignment="Center" VerticalAlignment="Center" Margin="0,-60,-150,0"/>
+
+                                </StackPanel>
+                                <StackPanel x:Name="contactIMG1" Orientation="Horizontal" VerticalAlignment="Bottom" HorizontalAlignment="Center">
+                                    <Image x:Name="fbIconH" Source="Assets/cutomPics/Facebook.png" Stretch="UniformToFill" Tapped="fbIconH_Tapped" Width="35" Height="35" Margin="0,0,10,0"/>
+                                    <Image x:Name="GMailIconH" Source="Assets/cutomPics/GMail.png" Margin="10,0" Tapped="GMailIconH_Tapped" Width="35"/>
+                                    <Image x:Name="LinkedInIconH" Source="Assets/cutomPics/LinkedIn.png" Margin="2,0" Tapped="LinkedInIconH_Tapped" Width="35"/>
+                                    <Image x:Name="TwitterIconH" Source="Assets/cutomPics/Twitter-Bird.png" Tapped="TwitterIconH_Tapped" Width="35" Margin="10,0,0,0"/>
+                                </StackPanel>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </StackPanel>
+
+
+                </ScrollViewer>
+
+
+            </StackPanel>
+
+
+
+
+        </ScrollViewer>
+
+
+
+
+
+    </StackPanel>
+</Page>
